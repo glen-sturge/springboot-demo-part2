@@ -1,13 +1,12 @@
 package com.glensoft.jpa;
 
-import com.glensoft.jpa.models.Author;
+import com.glensoft.jpa.models.Video;
 import com.glensoft.jpa.repositories.AuthorRepository;
+import com.glensoft.jpa.repositories.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.time.LocalDateTime;
 
 @SpringBootApplication
 public class JpaApplication {
@@ -17,16 +16,23 @@ public class JpaApplication {
 	}
 	@Bean
 	public CommandLineRunner commandLineRunner(
-			AuthorRepository repository
+			AuthorRepository repository,
+			VideoRepository videoRepository
 	) {
 		return args -> {
-			var author = Author.builder()
-					.firstName("Glen")
-					.lastName("Sturge")
-					.email("glensturge@mail.com")
-					.age(41)
+			var video = Video.builder()
+					.name("test_vid_01")
+					.length(24)
 					.build();
-			repository.save(author);
+			videoRepository.save(video);
+
+//			var author = Author.builder()
+//					.firstName("Glen")
+//					.lastName("Sturge")
+//					.email("glensturge@mail.com")
+//					.age(41)
+//					.build();
+//			repository.save(author);
 		};
 	}
 }

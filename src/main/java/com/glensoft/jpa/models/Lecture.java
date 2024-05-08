@@ -1,21 +1,16 @@
 package com.glensoft.jpa.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Entity
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Lecture {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+@SuperBuilder
+@Entity
+public class Lecture extends BaseEntity {
 
     private String name;
 

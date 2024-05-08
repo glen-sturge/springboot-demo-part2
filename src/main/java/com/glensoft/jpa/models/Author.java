@@ -2,20 +2,19 @@ package com.glensoft.jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Author {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+@SuperBuilder
+@Entity
+public class Author extends BaseEntity{
 
     private String firstName;
 
