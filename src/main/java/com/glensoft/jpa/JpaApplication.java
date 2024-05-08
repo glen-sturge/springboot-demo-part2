@@ -22,6 +22,8 @@ public class JpaApplication {
 		return args -> {
 			var video = Video.builder()
 					.name("test_vid_01")
+					.url("http://glensoft.com/video/test_vid_01")
+					.size(348)
 					.length(24)
 					.build();
 			videoRepository.save(video);
