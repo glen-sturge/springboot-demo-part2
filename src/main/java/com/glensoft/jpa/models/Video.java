@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@PrimaryKeyJoinColumn(name = "video_id")
+//@PrimaryKeyJoinColumn(name = "video_id")
 public class Video extends Resource {
 
     private int length;
